@@ -1,0 +1,67 @@
+<html>
+<html lang="en">
+<head>
+    <style>
+        #position_demo {
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+        }
+    </style>
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.15/libs/cn/index.js"></script>
+</head>
+<body>
+<div id="position_demo"></div>
+<script type="text/javascript"> // 确保SDK加载完成后再使用
+document.addEventListener('DOMContentLoaded', function() {
+  client = new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: '7525017841784373290',
+      isIframe: false,
+    },
+    componentProps: {
+      title: 'Coze',
+    },
+    auth: {
+      type: 'token',
+      token: 'pat_9DJaNEMYHQboFgQFeMChA4JPxwQYbcfE7OuBuVqtBcpNuRxBajmgjZB1kxKw1MKs',
+      onRefreshToken: function () {
+        return 'pat_9DJaNEMYHQboFgQFeMChA4JPxwQYbcfE7OuBuVqtBcpNuRxBajmgjZB1kxKw1MKs'
+      }
+    },
+    userInfo: {
+	    id: 'user',
+	    url: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/coze-logo.png',
+	    nickname: 'User',
+	  },
+    ui: {
+      base: {
+	      icon: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/chatsdk-logo.png',
+	      layout: 'pc',
+	      lang: 'zh',
+	      zIndex: 1000
+	    },
+      asstBtn: {
+          isNeed: true,
+      },
+      header: {
+          isShow: true,
+          isNeedClose: true,
+       },
+       chatBot: {
+       title: 'Coze Bot',
+       uploadable: false,
+       width: 1024,
+       isNeedAudio: false,
+       isNeedFunctionCallMessage: false,
+     },
+    },
+  });
+
+  client.showChatBot();
+
+
+});
+</script>
+</body>
+</html>
